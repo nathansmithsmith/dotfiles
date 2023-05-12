@@ -1,0 +1,7 @@
+#! /usr/bin/python
+
+import subprocess
+
+c = str(subprocess.check_output(["brightnessctl", "-m"]))
+v = c.split(",")
+print(v[3])

@@ -1,0 +1,46 @@
+#! /usr/bin/python3
+
+import subprocess
+import os
+import sys
+
+def dbm_to_percent(dbm):
+    if dbm > -50:
+        return 100
+    if dbm < -100:
+        return 0
+
+    return (dbm + 100) * 2
+
+def get_status(percent):
+    if percent >= 90:
+        return "󰤨"
+    elif percent >= 75:
+        return "󰤥"
+    elif percent >= 50:
+        return "󰤢"
+    else:
+        return "󰤟"
+
+interface = os.getenv("INTERFACE")
+status = subprocess.check_output(["iw", "dev", interface, "link"]).decode("ascii")
+
+if status == "Not connected.\n":
+    print("󰖪")
+    sys.exit()
+
+# Get ssid
+ssid_start = status.find("SSID: ")
+ssid = status[ssid_start + len("SSID: "):]
+ssid = ssid[:ssid.find("\n")]
+
+# Get dbm.
+dbm_start = status.find("signal: ")
+dbm = status[dbm_start + len("signal: "):]
+dbm = dbm[:dbm.find("\n") - 4]
+dbm = int(dbm)
+
+percent = dbm_to_percent(dbm)
+wifi_status = get_status(percent)
+
+print(f"{wifi_status} {ssid}")

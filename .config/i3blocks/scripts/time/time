@@ -1,0 +1,9 @@
+#! /usr/bin/python3
+
+from datetime import datetime
+
+now = datetime.now()
+current_time = now.strftime("%H:%M")
+date = now.strftime("%d-%m-%y")
+
+print(f" {date}  {current_time}")
