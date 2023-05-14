@@ -86,6 +86,12 @@ color=#e03010
 interval=persist
 label=Scarlett :
 
+# Reddit indeed.
+[reddit]
+interval=persist
+color=#E67E22
+REDDIT_RSS=/home/nathan/.config/i3blocks/scripts/reddit/reddit_rss.json
+
 # Wifi.
 [wifi]
 interval=5

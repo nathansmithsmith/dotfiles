@@ -1,0 +1,49 @@
+#! /usr/bin/python3
+
+import feedparser
+import json
+import time
+import os
+import threading
+import subprocess
+
+def handle_input():
+    while True:
+        x = int(input(""))
+
+        if x == 1:
+            # webbrowser.open has debug messages so I use this.
+            subprocess.check_output([
+                "xdg-open",
+                "https://www.reddit.com/message/unread"
+            ])
+
+
+def main():
+    # The urls are in a secret json file hahahaha.
+    rss_urls = {}
+
+    with open(os.getenv("REDDIT_RSS")) as fp:
+        rss_urls = json.load(fp)
+
+    unread_count = -1 # Init with -1 indeed
+
+    # Start input thread.
+    t = threading.Thread(target=handle_input)
+    t.start()
+
+    while True:
+        unread_feed = feedparser.parse(rss_urls["unread"])
+
+        last_unread_count = unread_count
+        unread_count = len(unread_feed.entries)
+
+        if unread_count != last_unread_count:
+            print(f" {unread_count}", flush=True)
+
+        time.sleep(8)
+
+
+if __name__ == "__main__":
+    main()
+
