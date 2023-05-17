@@ -14,6 +14,7 @@ cp -r ~/.config/i3 ./
 cp -r ~/.config/nvim ./
 cp -r ~/.config/dunst ./
 cp -r ~/.config/rofi ./
+cp ~/.config/pycodestyle ./
 
 # i3blocks without a few things
 cp -r ~/.config/i3blocks ./
