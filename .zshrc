@@ -115,10 +115,10 @@ source $ZSH/oh-my-zsh.sh
 # Enable vi mode.
 #bindkey -v
 
-bindkey -M vicmd j vi-backward-char
-bindkey -M vicmd k vi-up-line-or-history
-bindkey -M vicmd l vi-down-line-or-history
-bindkey -M vicmd \; vi-forward-char
+#bindkey -M vicmd j vi-backward-char
+#bindkey -M vicmd k vi-up-line-or-history
+#bindkey -M vicmd l vi-down-line-or-history
+#bindkey -M vicmd \; vi-forward-char
 
 alias kitten="kitty +kitten"
 alias icat="kitty +kitten icat"
@@ -127,6 +127,7 @@ alias fucking="sudo"
 
 export VISUAL=nvim
 export EDITOR=nvim
+export LD_LIBRARY_PATH=/usr/local/lib
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
