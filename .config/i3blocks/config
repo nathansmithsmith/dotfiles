@@ -36,14 +36,14 @@ markup=none
 # See the script for details.
 
 [volume]
-color=#a0a0ff
+color=#458588
 label=♪ 
 interval=once
 signal=2
 #STEP=5%
 
 [brightnessctl]
-color=#ffff00
+color=#d79921
 label=☀
 interval=once
 signal=3
@@ -67,6 +67,9 @@ interval=3
 
 # CPU usage
 [cpu_usage]
+COLOR_NORMAL=#fabd2f
+COLOR_WARN=#fe8019
+COLOR_CRIT=#cc241d
 interval=1
 LABEL=CPU 
 
@@ -82,14 +85,14 @@ interval=1
 # Scarlett is a very wonderful person so I always need to know if she is online or not.
 # I made a script for that. I can't show it to you tho.
 [scarlett_status]
-color=#e03010
+color=#cc241d
 interval=persist
 label=Scarlett :
 
 # Reddit indeed.
 [reddit]
 interval=persist
-color=#E67E22
+color=#ff5700
 REDDIT_RSS=/home/nathan/.config/i3blocks/scripts/reddit/reddit_rss.json
 
 # Wifi.
@@ -99,5 +102,5 @@ INTERFACE=wlo1
 
 # Date Time
 [time]
-color=#a0a0ff
+color=#83a598
 interval=5
