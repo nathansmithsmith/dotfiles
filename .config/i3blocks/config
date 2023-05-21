@@ -82,13 +82,6 @@ LABEL=CPU
 label=󰔄 
 interval=1
 
-# Scarlett is a very wonderful person so I always need to know if she is online or not.
-# I made a script for that. I can't show it to you tho.
-[scarlett_status]
-color=#cc241d
-interval=persist
-label=Scarlett :
-
 # Reddit indeed.
 [reddit]
 interval=persist
