@@ -83,10 +83,10 @@ label=󰔄
 interval=1
 
 # Reddit indeed.
-[reddit]
-interval=persist
-color=#ff5700
-REDDIT_RSS=/home/nathan/.config/i3blocks/scripts/reddit/reddit_rss.json
+#[reddit]
+#interval=persist
+#color=#ff5700
+#REDDIT_RSS=/home/nathan/.config/i3blocks/scripts/reddit/reddit_rss.json
 
 # Wifi.
 [wifi]

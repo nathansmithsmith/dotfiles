@@ -129,5 +129,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 export LD_LIBRARY_PATH=/usr/local/lib
 
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
